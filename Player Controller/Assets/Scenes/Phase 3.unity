@@ -212,7 +212,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 983a2d15c6154fa4887a4db642aad971, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -266,12 +266,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 194796260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7999faf12af6240a6576fec4369209, type: 3}
+  m_Script: {fileID: 11500000, guid: 03a46186c0987a940b6a75e2c07bf7f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastDirection: {x: 0, y: 0, z: 0}
-  speed: 0.5
-  jumpSpeed: 8
+  finalDect: {x: 0, y: 0, z: 0}
 --- !u!1 &854298187
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,13 +355,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854298187}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1151269892
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,8 +468,8 @@ GameObject:
   - component: {fileID: 2094990880}
   - component: {fileID: 2094990879}
   - component: {fileID: 2094990878}
-  - component: {fileID: 2094990877}
   - component: {fileID: 2094990876}
+  - component: {fileID: 2094990882}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -506,19 +504,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2094990877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094990875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a46186c0987a940b6a75e2c07bf7f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickSpawn: {fileID: 0}
 --- !u!64 &2094990878
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -606,6 +591,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2094990882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094990875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55466dbe3f822f4db74cd29bb997abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalDect: {x: 0, y: 0, z: 0}
+  canMove: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

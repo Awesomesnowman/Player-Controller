@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    public Vector3 platform = new Vector3(0,0,0);
     public Vector3 lastDirection;
     public Rigidbody myRig;
     public float speed = .5f;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
         myRig = GetComponent<Rigidbody>();
         if (myRig == null)
             throw new System.Exception("Player controller needs rigidbody");
+
     }
     public void onMove(InputAction.CallbackContext ev)
     {
@@ -42,6 +44,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         myRig.angularVelocity = new Vector3(lastDirection.x, 0, 0);
-        myRig.velocity += transform.forward * speed * lastDirection.x;
+        myRig.velocity = transform.forward * speed * lastDirection.x + new Vector3(0, myRig.velocity.y, 0) + platform;
     }
 }

@@ -29,12 +29,22 @@ public class Platform : MonoBehaviour
         {
             speed = speed * -1;
         }
-        /*
+    }
+
+    void OnCollisionStay(Collision other)
+    {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<Player>().speed =+ speed;
+            other.gameObject.GetComponent<Player>().platform = transform.forward * speed;
         }
-        */
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<Player>().platform = new Vector3(0, 0, 0);
+        }
     }
 
     // Update is called once per frame

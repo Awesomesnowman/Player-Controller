@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
         else
         {
             speed = speed * -1;
-            //Forward.x = speed;
         }
     }
 
@@ -43,7 +42,6 @@ public class Enemy : MonoBehaviour
         if(other.gameObject.tag == "ground")
         {
             speed = speed * -1;
-            //Forward.x = speed;
         }
 
     }

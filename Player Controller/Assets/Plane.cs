@@ -6,10 +6,14 @@ public class Plane : MonoBehaviour
 {
     public Vector3 finalDect;
     public bool canMove = false;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        finalDect = new Vector3(0, 0, 0);
+    }
 
+    private void Update()
+    {
+     
     }
 
     void OnMouseDown()
@@ -22,16 +26,6 @@ public class Plane : MonoBehaviour
             Debug.Log("We hit" + myCheck.point.x + "," + myCheck.point.y + "," + myCheck.point.z);
             finalDect = new Vector3(myCheck.point.x, transform.position.y, myCheck.point.z);
             canMove = true;
-        }
-    }
-
-    void Update()
-    {
-        if (gameObject.GetComponent<Plane>().canMove == true)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, gameObject.GetComponent<Plane>().finalDect, 2f * Time.deltaTime);
-            if (Vector3.Distance(transform.position, finalDect) < 0.5f)
-                canMove = false;
         }
     }
 }

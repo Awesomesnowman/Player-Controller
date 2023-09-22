@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class Mouse : MonoBehaviour
 {
-    private Vector3 finalDect;
-
+    public Vector3 finalDect;
+    GameObject plane;
     // Start is called before the first frame update
     void Start()
     {
-        
+        finalDect = new Vector3(0,0,0);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        plane = collision.gameObject;
+    }
     void Update()
     {
-        if (gameObject.GetComponent<Plane>().canMove == true)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, gameObject.GetComponent<Plane>().finalDect, 2f * Time.deltaTime);
-        }
+        finalDect = plane.GetComponent<Plane>().finalDect;
+        Debug.Log(finalDect);
+        transform.position = Vector3.MoveTowards(transform.position, finalDect, 2f * Time.deltaTime);
     }
 }
